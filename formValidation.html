@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script>
+
+    function validate(){
+        console.log("calling Validate Funcation")
+        var userName=document.getElementById("userName")
+        console.log(userName.value)
+        console.log(userName.value.length)
+        if(userName.value==''){
+            console.log("Please Enter Username")
+            var userName=document.getElementById("errorUserName")
+            errorUserName.innerHTML="Please Enter username"
+            errorUserName.style.color='red'
+        }
+        var email=document.getElementById("email")
+        console.log(email.value)
+        console.log(email.value.length)
+        if(email.value==''){
+            console.log("Please Enter Email")
+            var email=document.getElementById("errorEmail")
+            errorEmail.innerHTML="Please Enter email"
+            errorEmail.style.color='black'
+
+
+        }
+        var password=document.getElementById("password")
+        console.log(password.value)
+        console.log(password.value.length)
+        if(password.value==''){
+            console.log("Please Enter Password")
+            var email=document.getElementById("errorPassword")
+            errorEmail.innerHTML="Please Enter password"
+            errorEmail.style.color='red'
+
+
+        }
+        var gender=document.formRegister.gender
+        console.log(gender)
+
+        console.log(gender[0])
+        console.log(gender[1])
+        console.log(gender[2])
+        console.log(gender[0].checked)
+        console.log(gender[1].checked)
+        console.log(gender[2].checked)
+
+        if(gender[0].checked==false&& gender[1].checked==false && gender[2].checked==false)
+        console.log("Please select gender")
+
+        var city=document.formRegister.city
+        console.log(city)
+        if(city.value=="0"){
+        console.log("Please select city")
+        var city=document.getElementById("errorCity")
+            errorCity.innerHTML="Please Enter city"
+            errorCity.style.color='black'
+
+        }
+        //storage localstorage,sessionstorage
+
+        console.log(userName.value)
+        console.log(password.value)
+        console.log(email.value)
+
+        var obj={
+            "userName":userName.value,
+            "password" :password.value,
+            "email":email.value,
+        }
+        console.log(obj)
+
+        localStorage.setItem("javascript","storage in localstorage")
+        var objString=JSON.stringify(obj)
+        console.log(objString)
+        localStorage.setItem("xworkzuser",objString)
+        
+
+    }
+</script>
+    </head>
+    <form name="formRegister">
+        <div>
+            <label>Enter Username</label>
+            <input type="text" name="username" id="userName">
+            
+            <span id="errorUserName"></span>
+        </div>
+        <div>
+            <label>Enter Email</label>
+            <input type="text" name="email" id="email">
+            
+            <span id="errorEmail"></span>
+        </div>
+         <div>
+            <label>Enter Password</label>
+            <input type="text" name="password" id="password">
+            
+            <span id="errorPassword"></span>
+        </div> 
+        <div>
+            <label>Select gender</label>
+            <input type="radio" name="gender" >Male
+            <input type="radio" name="gender" >Female
+            <input type="radio" name="gender" >Other
+            
+        </div>
+        <div>
+            <label>Select City</label>
+            <select name="city">
+                <option value=0>---Select City</option>
+                <option>Mudhol</option>
+                <option>Bagalkot</option>
+            </select>
+            
+            <span id="errorCity"></span>
+        </div>
+
+        <!--document ,forname,fild name-->
+        <button type="button" onclick="validate()">Register</button>
+        <button type="reset">Reset</button>
+    </form>
+    <!--when clik button
+    input-click on button
+     output-error massge-->
+</html >

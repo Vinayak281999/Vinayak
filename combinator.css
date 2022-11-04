@@ -1,0 +1,18 @@
+/*descendant selector*/
+div p{
+    color: red(255,0,0)
+
+}
+/*child selector*/
+div > p{
+    color: blue
+
+}
+/*adjesent sidling selactor*/
+div+p{
+    color:aqua
+}
+/* general silding selector*/
+div~p{
+    color: violet
+}
